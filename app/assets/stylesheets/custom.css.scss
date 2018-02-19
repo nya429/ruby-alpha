@@ -1,4 +1,4 @@
-$navbar-default-bg: crimson;
+$navbar-default-bg: black;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -18,4 +18,47 @@ $navbar-default-bg: crimson;
 
 .center {
   text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('Scarlet.jpg');
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlg {
+  background-color: #422;
+  font-size: 1.75em;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top:1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover  {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
 }
