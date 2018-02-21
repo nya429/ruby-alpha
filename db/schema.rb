@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180221150847) do
+=======
+ActiveRecord::Schema.define(version: 20180220183945) do
+>>>>>>> 4d6b5db165ead6e76d07cbe0c229669338544c1a
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "create_at"
-    t.datetime "update_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
