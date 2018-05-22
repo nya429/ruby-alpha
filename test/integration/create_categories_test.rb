@@ -11,5 +11,16 @@ class CreateCateogiresTest < ActionDispatch::IntegrationTest
     assert_match "sports", response.body
   end
   
+  test "invalid category submission" do
+    get new_category_path
+    assert_template 'categories/new'
+    assert_no_difference 'Category.count' do
+      post categories_path, category: {name: " "}
+    end
+    assert_template 'categories/new'
+    #look for the existance of the view reference
+    assert_select 'h2.panel-title'
+    assert_select 'div.panel-body'
+  end
   
 end
