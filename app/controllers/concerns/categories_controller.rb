@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   
   def index
-    
+     @categories = Category.all
   end
   
   
@@ -10,11 +10,21 @@ class CategoriesController < ApplicationController
   end
   
   def ceate
-
+    @category = Category.save(category_params)
+    if @category.save
+      flash[:success] = 'Category was created successfully'
+      redirect_to categories_path
+    else
+      render 'new'
+    end
   end
   
   def show
 
   end
-
+  
+  private
+  def category_params
+    params.require(:category).permit(:name)
+  end
 end

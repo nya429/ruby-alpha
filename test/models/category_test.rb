@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-  
+  #before every assertion start
   def setup
     @category = Category.new(name: "sports")
   end
@@ -26,7 +26,7 @@ class CategoryTest < ActiveSupport::TestCase
     assert_not @category.valid?
   end
   
-    test "category should not be too lonng" do
+    test "category should not be too long" do
     @category.name = "a" * 26
     assert_not @category.valid?
   end
