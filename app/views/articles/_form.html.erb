@@ -21,10 +21,12 @@
       </div>
       <div class="form-group">
         <div class="row">
+             <!-- comment connot be placed in between <% %> tags-->
+             <!-- label class = {}    checkbox class=>checkbox text=>checkbox.text -->
+             <!--create check box from collection-> Category.all  for=>category_ids   text-method => :name value-method=>:id-->
           <div class="col-sm-offset-2 col-sm-10">
-            <!--create check box from collection-> Category.all  for=>category_ids   text-method => :name value-method=>:id-->
             <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |checkbox| %>
-               <!-- label class = {}    checkbox class=>checkbox text=>checkbox.text -->
+
               <% checkbox.label(class: "checkbox-inline input_checkbox") {checkbox.check_box(class: "checkbox") + checkbox.text} %>
             <% end %>
           </div>

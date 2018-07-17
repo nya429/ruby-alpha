@@ -52,9 +52,10 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :description)
+      # category_ids: [] indicate the category acquired as an array
+      params.require(:article).permit(:title, :description, category_ids: [])
     end
-    
+
     def require_same_user
       if current_user != @article.user and !current_user.admin!
         flash[:danger] = "You can only edit or delete your own articles"
